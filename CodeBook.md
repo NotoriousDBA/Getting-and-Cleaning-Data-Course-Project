@@ -63,21 +63,30 @@ Together, the above were used to produce 561 "features" (variables) for each obs
 The UCI HAR dataset is composed of the following files, containing the listed variables. 
 
 * activity_labels.txt - The list of activities performed in the experiments.
+
 > * activity id - the numeric identifier of an activity, as used in the dataset
 > * activity name - the text description of the activity
+
 * train/subject_train.txt - The subject performing the activity for each observation in the training dataset.
+
 > * subject id - the numeric identifier of a subject
+
 * train/y_train.txt - The activity being performed for each observation in the training dataset.
+
 > * activity id - the numeric identifier of an activity (see activity_labels.txt above)
+
 * train/X_train.txt - The 561 variables derived for each observation in the training dataset, as described in the previous section.
+
 > As noted above, we we'll not describe each of the 561 variables here. Suffice it to say that the 66 that we extract and use in the new datasets are described below.
+
 * test/subject_test.txt, test/y_test.txt, test/X_test.txt - The datafiles for the test dataset, identical to the corresponding files in the training dataset, as listed above.
 
-#### Dataset of Means and Standard Deviations - meanandstdfeatures.txt
+#### Dataset of Means and Standard Deviations - "meanandstdfeatures.txt"
 ---
 For this dataset the subject, activity, and feature data from UCI HAR were joined together, with only the measurements on the mean and standard deviation for each measurement extracted. In addition, the observations from the training and test datasets were merged together, and an additional variable added to indicate which of the original datasets a particular observation came from.	
 
 The set of variables in the dataset is as follows:
+
 1. subjectid - The unique numeric identifier of the test subject for whom the data were collected.
 2. activityname - The name of the activity being performed by the test subject when the observations were recorded.
 3. originaldataset - Records whether the observation was originally part of the test or training datasets.
@@ -148,79 +157,81 @@ The set of variables in the dataset is as follows:
 68. bodygyrojerkmagfreqmean - The mean of body angular velocity jerk magnitude, in the frequency domain, in radians/second.
 69. bodygyrojerkmagfreqstd - The standard deviation of body angular velocity jerk magnitude, in the frequency domain, in radians/second.
 
-#### Summary Dataset of Means and Standard Deviations - meanandstdfeatures_summary.txt
+#### Summary Dataset of Means and Standard Deviations - "meanandstdfeatures_summary.txt"
 ---
 This dataset summarizes the preceding dataset with the mean of each variable, grouped by subject, activity, and dataset of origin.
 
 The set of variables in the dataset is as follows:
-1. subjectid - The unique numeric identifier of the test subject for whom the data were collected.
-2. activityname - The name of the activity being performed by the test subject when the observations were recorded.
-3. originaldataset - Records whether the observation was originally part of the test or training datasets.
-4. meanbodyaccxaxistimemean - The mean of mean body acceleration (total acceleration minus gravity) along the X-axis, in the time domain, in standard gravitational units (g).
-5. meanbodyaccyaxistimemean - The mean of mean body acceleration (total acceleration minus gravity) along the Y-axis, in the time domain, in standard gravitational units (g).
-6. meanbodyacczaxistimemean - The mean of mean body acceleration (total acceleration minus gravity) along the Z-axis, in the time domain, in standard gravitational units (g).
-7. meanbodyaccxaxistimestd - The mean of standard deviation of body acceleration (total acceleration minus gravity) along the X-axis, in the time domain, in standard gravitational units (g).
-8. meanbodyaccyaxistimestd - The mean of standard deviation of body acceleration (total acceleration minus gravity) along the Y-axis, in the time domain, in standard gravitational units (g).
-9. meanbodyacczaxistimestd - The mean of standard deviation of body acceleration (total acceleration minus gravity) along the Z-axis, in the time domain, in standard gravitational units (g).
-10. meangravityaccxaxistimemean - The mean of mean acceleration due to gravity along the X-axis, in the time domain, in standard gravitational units (g).
-11. meangravityaccyaxistimemean - The mean of mean acceleration due to gravity along the Y-axis, in the time domain, in standard gravitational units (g).
-12. meangravityacczaxistimemean - The mean of mean acceleration due to gravity along the Z-axis, in the time domain, in standard gravitational units (g).
-13. meangravityaccxaxistimestd - The mean of standard deviation of acceleration due to gravity along the X-axis, in the time domain, in standard gravitational units (g).
-14. meangravityaccyaxistimestd - The mean of standard deviation of acceleration due to gravity along the Y-axis, in the time domain, in standard gravitational units (g).
-15. meangravityacczaxistimestd - The mean of standard deviation of acceleration due to gravity along the Z-axis, in the time domain, in standard gravitational units (g).
-16. meanbodyaccjerkxaxistimemean - The mean of mean of body acceleration jerk along the X-axis, in the time domain, in standard gravitational units (g).
-17. meanbodyaccjerkyaxistimemean - The mean of mean of body acceleration jerk along the Y-axis, in the time domain, in standard gravitational units (g).
-18. meanbodyaccjerkzaxistimemean - The mean of mean of body acceleration jerk along the Z-axis, in the time domain, in standard gravitational units (g).
-19. meanbodyaccjerkxaxistimestd - The mean of standard deviation of body acceleration jerk along the X-axis, in the time domain, in standard gravitational units (g).
-20. meanbodyaccjerkyaxistimestd - The mean of standard deviation of body acceleration jerk along the Y-axis, in the time domain, in standard gravitational units (g).
-21. meanbodyaccjerkzaxistimestd - The mean of standard deviation of body acceleration jerk along the Z-axis, in the time domain, in standard gravitational units (g).
-22. meanbodygyroxaxistimemean - The mean of mean of body angular velocity along the X-axis, in the time domain, in radians/second.
-23. meanbodygyroyaxistimemean - The mean of mean of body angular velocity along the Y-axis, in the time domain, in radians/second.
-24. meanbodygyrozaxistimemean - The mean of mean of body angular velocity along the Z-axis, in the time domain, in radians/second.
-25. meanbodygyroxaxistimestd - The mean of standard deviation of body angular velocity along the X-axis, in the time domain, in radians/second.
-26. meanbodygyroyaxistimestd - The mean of standard deviation of body angular velocity along the Y-axis, in the time domain, in radians/second.
-27. meanbodygyrozaxistimestd - The mean of standard deviation of body angular velocity along the Z-axis, in the time domain, in radians/second.
-28. meanbodygyrojerkxaxistimemean - The mean of mean of body angular velocity jerk along the X-axis, in the time domain, in radians/second.
-29. meanbodygyrojerkyaxistimemean - The mean of mean of body angular velocity jerk along the Y-axis, in the time domain, in radians/second.
-30. meanbodygyrojerkzaxistimemean - The mean of mean of body angular velocity jerk along the Z-axis, in the time domain, in radians/second.
-31. meanbodygyrojerkxaxistimestd - The mean of standard deviation of body angular velocity jerk along the X-axis, in the time domain, in radians/second.
-32. meanbodygyrojerkyaxistimestd - The mean of standard deviation of body angular velocity jerk along the Y-axis, in the time domain, in radians/second.
-33. meanbodygyrojerkzaxistimestd - The mean of standard deviation of body angular velocity jerk along the Z-axis, in the time domain, in radians/second.
-34. meanbodyaccmagtimemean - The mean of mean magnitude of body acceleration (total acceleration minus gravity), in the time domain, in standard gravitational units (g).
-35. meanbodyaccmagtimestd - The mean of standard deviation of the magnitude of body acceleration (total acceleration minus gravity), in the time domain, in standard gravitational units (g).
-36. meangravityaccmagtimemean - The mean of mean magnitude of acceleration due to gravity, in the time domain, in standard gravitational units (g).
-37. meangravityaccmagtimestd - The mean of standard deviation of the magnitude of acceleration due to gravity, in the time domain, in standard gravitational units (g).
-38. meanbodyaccjerkmagtimemean - The mean of mean magnitude of body acceleration jerk, in the time domain, in standard gravitational units (g).
-39. meanbodyaccjerkmagtimestd - The mean of standard deviation of the magnitude of body acceleration jerk, in the time domain, in standard gravitational units (g).
-40. meanbodygyromagtimemean - The mean of mean magnitude of body angular velocity, in the time domain, in radians/second.
-41. meanbodygyromagtimestd - The mean of standard deviation of the magnitude of body angular velocity, in the time domain, in radians/second.
-42. meanbodygyrojerkmagtimemean - The mean of mean of body angular velocity jerk magnitude, in the time domain, in radians/second.
-43. meanbodygyrojerkmagtimestd - The mean of standard deviation of body angular velocity jerk magnitude, in the time domain, in radians/second.
-44. meanbodyaccxaxisfreqmean - The mean of mean body acceleration (total acceleration minus gravity) along the X-axis, in the frequency domain, in standard gravitational units (g).
-45. meanbodyaccyaxisfreqmean - The mean of mean body acceleration (total acceleration minus gravity) along the Y-axis, in the frequency domain, in standard gravitational units (g).
-46. meanbodyacczaxisfreqmean - The mean of mean body acceleration (total acceleration minus gravity) along the Z-axis, in the frequency domain, in standard gravitational units (g).
-47. meanbodyaccxaxisfreqstd - The mean of standard deviation of body acceleration (total acceleration minus gravity) along the X-axis, in the frequency domain, in standard gravitational units (g).
-48. meanbodyaccyaxisfreqstd - The mean of standard deviation of body acceleration (total acceleration minus gravity) along the Y-axis, in the frequency domain, in standard gravitational units (g).
-49. meanbodyacczaxisfreqstd - The mean of standard deviation of body acceleration (total acceleration minus gravity) along the Z-axis, in the frequency domain, in standard gravitational units (g).
-50. meanbodyaccjerkxaxisfreqmean - The mean of mean of body acceleration jerk along the X-axis, in the frequency domain, in standard gravitational units (g).
-51. meanbodyaccjerkyaxisfreqmean - The mean of mean of body acceleration jerk along the Y-axis, in the frequency domain, in standard gravitational units (g).
-52. meanbodyaccjerkzaxisfreqmean - The mean of mean of body acceleration jerk along the Z-axis, in the frequency domain, in standard gravitational units (g).
-53. meanbodyaccjerkxaxisfreqstd - The mean of standard deviation of body acceleration jerk along the X-axis, in the frequency domain, in standard gravitational units (g).
-54. meanbodyaccjerkyaxisfreqstd - The mean of standard deviation of body acceleration jerk along the Y-axis, in the frequency domain, in standard gravitational units (g).
-55. meanbodyaccjerkzaxisfreqstd - The mean of standard deviation of body acceleration jerk along the Z-axis, in the frequency domain, in standard gravitational units (g).
-56. meanbodygyroxaxisfreqmean - The mean of mean of body angular velocity along the X-axis, in the frequency domain, in radians/second.
-57. meanbodygyroyaxisfreqmean - The mean of mean of body angular velocity along the Y-axis, in the frequency domain, in radians/second.
-58. meanbodygyrozaxisfreqmean - The mean of mean of body angular velocity along the Z-axis, in the frequency domain, in radians/second.
-59. meanbodygyroxaxisfreqstd - The mean of standard deviation of body angular velocity along the X-axis, in the frequency domain, in radians/second.
-60. meanbodygyroyaxisfreqstd - The mean of standard deviation of body angular velocity along the Y-axis, in the frequency domain, in radians/second.
-61. meanbodygyrozaxisfreqstd - The mean of standard deviation of body angular velocity along the Z-axis, in the frequency domain, in radians/second.
-62. meanbodyaccmagfreqmean - The mean of mean magnitude of body acceleration (total acceleration minus gravity), in the frequency domain, in standard gravitational units (g).
-63. meanbodyaccmagfreqstd - The mean of standard deviation of the magnitude of body acceleration (total acceleration minus gravity), in the frequency domain, in standard gravitational units (g).
-64. meanbodyaccjerkmagfreqmean - The mean of mean magnitude of body acceleration jerk, in the frequency domain, in standard gravitational units (g).
-65. meanbodyaccjerkmagfreqstd - The mean of standard deviation of the magnitude of body acceleration jerk, in the frequency domain, in standard gravitational units (g).
-66. meanbodygyromagfreqmean - The mean of mean of body angular velocity, in the frequency domain, in radians/second.
-67. meanbodygyromagfreqstd - The mean of standard deviation of body angular velocity, in the frequency domain, in radians/second.
-68. meanbodygyrojerkmagfreqmean - The mean of mean of body angular velocity jerk magnitude, in the frequency domain, in radians/second.
-69. meanbodygyrojerkmagfreqstd - The mean of standard deviation of body angular velocity jerk magnitude, in the frequency domain, in radians/second.
+
+# | Name | Description
+1 | subjectid | The unique numeric identifier of the test subject for whom the data were collected.
+2 | activityname | The name of the activity being performed by the test subject when the observations were recorded.
+3 | originaldataset | Records whether the observation was originally part of the test or training datasets.
+4 | meanbodyaccxaxistimemean | The mean of mean body acceleration (total acceleration minus gravity) along the X-axis, in the time domain, in standard gravitational units (g).
+5 | meanbodyaccyaxistimemean | The mean of mean body acceleration (total acceleration minus gravity) along the Y-axis, in the time domain, in standard gravitational units (g).
+6 | meanbodyacczaxistimemean | The mean of mean body acceleration (total acceleration minus gravity) along the Z-axis, in the time domain, in standard gravitational units (g).
+7 | meanbodyaccxaxistimestd | The mean of standard deviation of body acceleration (total acceleration minus gravity) along the X-axis, in the time domain, in standard gravitational units (g).
+8 | meanbodyaccyaxistimestd | The mean of standard deviation of body acceleration (total acceleration minus gravity) along the Y-axis, in the time domain, in standard gravitational units (g).
+9 | meanbodyacczaxistimestd | The mean of standard deviation of body acceleration (total acceleration minus gravity) along the Z-axis, in the time domain, in standard gravitational units (g).
+10 | meangravityaccxaxistimemean | The mean of mean acceleration due to gravity along the X-axis, in the time domain, in standard gravitational units (g).
+11 | meangravityaccyaxistimemean | The mean of mean acceleration due to gravity along the Y-axis, in the time domain, in standard gravitational units (g).
+12 | meangravityacczaxistimemean | The mean of mean acceleration due to gravity along the Z-axis, in the time domain, in standard gravitational units (g).
+13 | meangravityaccxaxistimestd | The mean of standard deviation of acceleration due to gravity along the X-axis, in the time domain, in standard gravitational units (g).
+14 | meangravityaccyaxistimestd | The mean of standard deviation of acceleration due to gravity along the Y-axis, in the time domain, in standard gravitational units (g).
+15 | meangravityacczaxistimestd | The mean of standard deviation of acceleration due to gravity along the Z-axis, in the time domain, in standard gravitational units (g).
+16 | meanbodyaccjerkxaxistimemean | The mean of mean of body acceleration jerk along the X-axis, in the time domain, in standard gravitational units (g).
+17 | meanbodyaccjerkyaxistimemean | The mean of mean of body acceleration jerk along the Y-axis, in the time domain, in standard gravitational units (g).
+18 | meanbodyaccjerkzaxistimemean | The mean of mean of body acceleration jerk along the Z-axis, in the time domain, in standard gravitational units (g).
+19 | meanbodyaccjerkxaxistimestd | The mean of standard deviation of body acceleration jerk along the X-axis, in the time domain, in standard gravitational units (g).
+20 | meanbodyaccjerkyaxistimestd | The mean of standard deviation of body acceleration jerk along the Y-axis, in the time domain, in standard gravitational units (g).
+21 | meanbodyaccjerkzaxistimestd | The mean of standard deviation of body acceleration jerk along the Z-axis, in the time domain, in standard gravitational units (g).
+22 | meanbodygyroxaxistimemean | The mean of mean of body angular velocity along the X-axis, in the time domain, in radians/second.
+23 | meanbodygyroyaxistimemean | The mean of mean of body angular velocity along the Y-axis, in the time domain, in radians/second.
+24 | meanbodygyrozaxistimemean | The mean of mean of body angular velocity along the Z-axis, in the time domain, in radians/second.
+25 | meanbodygyroxaxistimestd | The mean of standard deviation of body angular velocity along the X-axis, in the time domain, in radians/second.
+26 | meanbodygyroyaxistimestd | The mean of standard deviation of body angular velocity along the Y-axis, in the time domain, in radians/second.
+27 | meanbodygyrozaxistimestd | The mean of standard deviation of body angular velocity along the Z-axis, in the time domain, in radians/second.
+28 | meanbodygyrojerkxaxistimemean | The mean of mean of body angular velocity jerk along the X-axis, in the time domain, in radians/second.
+29 | meanbodygyrojerkyaxistimemean | The mean of mean of body angular velocity jerk along the Y-axis, in the time domain, in radians/second.
+30 | meanbodygyrojerkzaxistimemean | The mean of mean of body angular velocity jerk along the Z-axis, in the time domain, in radians/second.
+31 | meanbodygyrojerkxaxistimestd | The mean of standard deviation of body angular velocity jerk along the X-axis, in the time domain, in radians/second.
+32 | meanbodygyrojerkyaxistimestd | The mean of standard deviation of body angular velocity jerk along the Y-axis, in the time domain, in radians/second.
+33 | meanbodygyrojerkzaxistimestd | The mean of standard deviation of body angular velocity jerk along the Z-axis, in the time domain, in radians/second.
+34 | meanbodyaccmagtimemean | The mean of mean magnitude of body acceleration (total acceleration minus gravity), in the time domain, in standard gravitational units (g).
+35 | meanbodyaccmagtimestd | The mean of standard deviation of the magnitude of body acceleration (total acceleration minus gravity), in the time domain, in standard gravitational units (g).
+36 | meangravityaccmagtimemean | The mean of mean magnitude of acceleration due to gravity, in the time domain, in standard gravitational units (g).
+37 | meangravityaccmagtimestd | The mean of standard deviation of the magnitude of acceleration due to gravity, in the time domain, in standard gravitational units (g).
+38 | meanbodyaccjerkmagtimemean | The mean of mean magnitude of body acceleration jerk, in the time domain, in standard gravitational units (g).
+39 | meanbodyaccjerkmagtimestd | The mean of standard deviation of the magnitude of body acceleration jerk, in the time domain, in standard gravitational units (g).
+40 | meanbodygyromagtimemean | The mean of mean magnitude of body angular velocity, in the time domain, in radians/second.
+41 | meanbodygyromagtimestd | The mean of standard deviation of the magnitude of body angular velocity, in the time domain, in radians/second.
+42 | meanbodygyrojerkmagtimemean | The mean of mean of body angular velocity jerk magnitude, in the time domain, in radians/second.
+43 | meanbodygyrojerkmagtimestd | The mean of standard deviation of body angular velocity jerk magnitude, in the time domain, in radians/second.
+44 | meanbodyaccxaxisfreqmean | The mean of mean body acceleration (total acceleration minus gravity) along the X-axis, in the frequency domain, in standard gravitational units (g).
+45 | meanbodyaccyaxisfreqmean | The mean of mean body acceleration (total acceleration minus gravity) along the Y-axis, in the frequency domain, in standard gravitational units (g).
+46 | meanbodyacczaxisfreqmean | The mean of mean body acceleration (total acceleration minus gravity) along the Z-axis, in the frequency domain, in standard gravitational units (g).
+47 | meanbodyaccxaxisfreqstd | The mean of standard deviation of body acceleration (total acceleration minus gravity) along the X-axis, in the frequency domain, in standard gravitational units (g).
+48 | meanbodyaccyaxisfreqstd | The mean of standard deviation of body acceleration (total acceleration minus gravity) along the Y-axis, in the frequency domain, in standard gravitational units (g).
+49 | meanbodyacczaxisfreqstd | The mean of standard deviation of body acceleration (total acceleration minus gravity) along the Z-axis, in the frequency domain, in standard gravitational units (g).
+50 | meanbodyaccjerkxaxisfreqmean | The mean of mean of body acceleration jerk along the X-axis, in the frequency domain, in standard gravitational units (g).
+51 | meanbodyaccjerkyaxisfreqmean | The mean of mean of body acceleration jerk along the Y-axis, in the frequency domain, in standard gravitational units (g).
+52 | meanbodyaccjerkzaxisfreqmean | The mean of mean of body acceleration jerk along the Z-axis, in the frequency domain, in standard gravitational units (g).
+53 | meanbodyaccjerkxaxisfreqstd | The mean of standard deviation of body acceleration jerk along the X-axis, in the frequency domain, in standard gravitational units (g).
+54 | meanbodyaccjerkyaxisfreqstd | The mean of standard deviation of body acceleration jerk along the Y-axis, in the frequency domain, in standard gravitational units (g).
+55 | meanbodyaccjerkzaxisfreqstd | The mean of standard deviation of body acceleration jerk along the Z-axis, in the frequency domain, in standard gravitational units (g).
+56 | meanbodygyroxaxisfreqmean | The mean of mean of body angular velocity along the X-axis, in the frequency domain, in radians/second.
+57 | meanbodygyroyaxisfreqmean | The mean of mean of body angular velocity along the Y-axis, in the frequency domain, in radians/second.
+58 | meanbodygyrozaxisfreqmean | The mean of mean of body angular velocity along the Z-axis, in the frequency domain, in radians/second.
+59 | meanbodygyroxaxisfreqstd | The mean of standard deviation of body angular velocity along the X-axis, in the frequency domain, in radians/second.
+60 | meanbodygyroyaxisfreqstd | The mean of standard deviation of body angular velocity along the Y-axis, in the frequency domain, in radians/second.
+61 | meanbodygyrozaxisfreqstd | The mean of standard deviation of body angular velocity along the Z-axis, in the frequency domain, in radians/second.
+62 | meanbodyaccmagfreqmean | The mean of mean magnitude of body acceleration (total acceleration minus gravity), in the frequency domain, in standard gravitational units (g).
+63 | meanbodyaccmagfreqstd | The mean of standard deviation of the magnitude of body acceleration (total acceleration minus gravity), in the frequency domain, in standard gravitational units (g).
+64 | meanbodyaccjerkmagfreqmean | The mean of mean magnitude of body acceleration jerk, in the frequency domain, in standard gravitational units (g).
+65 | meanbodyaccjerkmagfreqstd | The mean of standard deviation of the magnitude of body acceleration jerk, in the frequency domain, in standard gravitational units (g).
+66 | meanbodygyromagfreqmean | The mean of mean of body angular velocity, in the frequency domain, in radians/second.
+67 | meanbodygyromagfreqstd | The mean of standard deviation of body angular velocity, in the frequency domain, in radians/second.
+68 | meanbodygyrojerkmagfreqmean | The mean of mean of body angular velocity jerk magnitude, in the frequency domain, in radians/second.
+69 | meanbodygyrojerkmagfreqstd | The mean of standard deviation of body angular velocity jerk magnitude, in the frequency domain, in radians/second.
 
 ## Methodology
