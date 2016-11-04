@@ -163,7 +163,7 @@ This dataset summarizes the preceding dataset with the mean of each variable, gr
 
 The set of variables in the dataset is as follows:
 
-# | Name | Description
+Field Number | Name | Description
 1 | subjectid | The unique numeric identifier of the test subject for whom the data were collected.
 2 | activityname | The name of the activity being performed by the test subject when the observations were recorded.
 3 | originaldataset | Records whether the observation was originally part of the test or training datasets.
