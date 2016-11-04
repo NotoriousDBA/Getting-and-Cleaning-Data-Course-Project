@@ -243,3 +243,27 @@ Variable Number | Name | Description
 69 | meanbodygyrojerkmagfreqstd | The mean of standard deviation of body angular velocity jerk magnitude, in the frequency domain, in radians/second.
 
 ## Methodology
+
+The procedure for assembling the two datasets produced by this project is straightforward. Both the data.table and dplyr libraries were used to make the whole process simpler.
+
+The steps to produce the first dataset are:
+
+1. The set of activity ids and activity names is read from "activity\_labels.txt" into a dataframe named activitylabels.
+2. A variable is initialized with an empty vector, to be used to accumulate the rows of the test and training datasets.
+3. We loop over the test and training datasets.
+   1. The list of subject ids is read from "[test|train]/subject\_[test|train].txt" into a dataframe named subjects.
+   2. The list of activity ids is read from "[test|train]/y\_[test|train].txt" into a dataframe named activities.
+   3. The activities dataframe is joined with the activitylabels dataframe by activityid to produce a new activities dataframe that contains activityname instead of activityid.
+   4. An origin dataframe is generated which contains a single column, with the value "test" or "train" in every row, with the same number of rows as the dataset.
+   5. The complete list of features from "[test|train]/X\_[test|train].txt" is read into a dataframe named features.
+   6. We select out of features only the features on the mean and standard deviation for each measurement extracted.
+   7. The variables in features are given appropriate and meaningful names.
+   8. We use the cbind function to join the subjects, activities, origin, and features dataframes into a single dataframe.
+   9. Last, we use the rbind function to merge the rows of this dataset into whatever is contained in the accumulator variable.
+4. Once the test and training datasets have been processed and merged together, the resulting dataset is written to a file named "meanandstdfeatures.txt".
+
+The steps to produce the second dataset are:
+
+1. Use the dplyr group\_by() function to group the first dataset by subjectid, activityname, and originaldataset.
+2. Use the dplyr summarize() function to produce a new dataset containing the mean of every variable, grouped as in step 1.
+3. The summarized dataset is written to a file named "meanandstdfeatures\_summary.txt".
