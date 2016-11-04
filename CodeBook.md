@@ -65,16 +65,16 @@ The UCI HAR dataset is composed of the following files, containing the listed va
 
 * activity_labels.txt - The list of activities performed in the experiments.
 
-> * activity id - the numeric identifier of an activity, as used in the dataset
-> * activity name - the text description of the activity
+   * activity id - the numeric identifier of an activity, as used in the dataset
+   * activity name - the text description of the activity
 
 * train/subject_train.txt - The subject performing the activity for each observation in the training dataset.
 
-> * subject id - the numeric identifier of a subject
+   * subject id - the numeric identifier of a subject
 
 * train/y_train.txt - The activity being performed for each observation in the training dataset.
 
-> * activity id - the numeric identifier of an activity (see activity_labels.txt above)
+   * activity id - the numeric identifier of an activity (see activity_labels.txt above)
 
 * train/X_train.txt - The 561 variables derived for each observation in the training dataset, as described in the previous section.
 
