@@ -256,7 +256,7 @@ The steps to produce the first dataset are:
    3. The activities dataframe is joined with the activitylabels dataframe by activityid to produce a new activities dataframe that contains activityname instead of activityid.
    4. An origin dataframe is generated which contains a single column, with the value "test" or "train" in every row, with the same number of rows as the dataset.
    5. The complete list of features from "[test|train]/X\_[test|train].txt" is read into a dataframe named features.
-   6. We select out of features only the features on the mean and standard deviation for each measurement extracted.
+   6. We select out of features only the features on the mean and standard deviation for each measurement extracted, 66 in total.
    7. The variables in features are given appropriate and meaningful names.
    8. We use the cbind function to join the subjects, activities, origin, and features dataframes into a single dataframe.
    9. Last, we use the rbind function to merge the rows of this dataset into whatever is contained in the accumulator variable.
